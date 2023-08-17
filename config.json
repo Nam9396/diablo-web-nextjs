@@ -1,0 +1,14 @@
+{
+  "discord_token": "MTEzNDg1NzMwMTAxNTEzNDIwOA.GP0wcB.IHgvVH3BIB6L03yasr8Pcab6cQRPrlQI2hQTag", 
+  "PORT": 8000, 
+  "CHANNEL_ID": 1134893322360590490, 
+  "SERVER_ID": 1134893322360590487, 
+  "MONGO_URI": "mongodb+srv://khoagaming:khoa2023@cluster0.hfxkte9.mongodb.net/?retryWrites=true&w=majority",
+  "JWT_SECRET": "khoa2023",
+  "NEXTAUTH_SECRET": "0fu1yIOrA0AQrRVz4iAXxxo+I4sYSB6o/9GSGyBN3cE=", 
+  "NEXTAUTH_URL": "http://localhost:3000", 
+  "GOOGLE_AUTH_CLIENT_ID": "75874282083-2rk9rfb5q2dacpj0deg0osmcuj3m3h0l.apps.googleusercontent.com", 
+  "GOOGLE_AUTH_CLIENT_SECRET": "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", 
+  "DISCORD_AUTH_CLIENT_ID": 1134857301015134208, 
+  "DISCORD_AUTH_CLIENT_SECRET": "fZ1XCzgvYpMZCrVdJqpze69OT7n2FQLH"
+}
