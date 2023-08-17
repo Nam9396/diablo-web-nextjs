@@ -5,7 +5,6 @@ import remarkGfm from 'remark-gfm'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx'],
   reactStrictMode: true,
-  distDir: 'build',
   experimental: {
     scrollRestoration: true,
   },
