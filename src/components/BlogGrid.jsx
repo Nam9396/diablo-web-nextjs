@@ -30,7 +30,7 @@ const BlogGrid = () => {
                       Nguyen Duy Anh Khoa
                     </div>
                 </div>
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-zinc-100">
                   <Link href={`/articles/post/${post.slug}`}>
                     <span className="absolute inset-0" />
                     {post.title}

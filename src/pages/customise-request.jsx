@@ -19,10 +19,10 @@ const CustomiseRequest = () =>  {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* sologan section */}
         <header className="mx-auto max-w-4xl text-center">
-          <h1 className="text-2xl font-bold tracking-tight text-white  sm:text-5xl">
-            Gửi yêu cầu - <span className='text-yellow-400'>Theo ý muốn</span>
+          <h1 className="text-2xl font-bold tracking-tight text-zinc-100  sm:text-5xl">
+            Gửi yêu cầu - <span className='text-yellow-500'>Theo ý muốn</span>
           </h1>
-          <p className="mt-10 text-lg font-medium text-zinc-600 dark:text-zinc-400">
+          <p className="mt-10 text-lg font-medium text-gray-300">
             Và chúng tôi sẽ liên hệ bạn trong vòng 30 phút đến 1 giờ.
           </p>
         </header>

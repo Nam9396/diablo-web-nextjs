@@ -45,7 +45,7 @@ const Hero = () => {
             <span className="relative whitespace-nowrap text-yellow-500">more exciting</span>{' '}
             together.
           </h1>
-          <p className="mt-10 text-lg font-medium text-zinc-400">
+          <p className="mt-10 text-lg font-medium text-gray-300">
             Chúng tôi mang đến cho bạn một trải nghiệm chuyên nghiệp, đáng tin cậy và hiệu quả trong hành trình chinh phục thế giới Diablo.
           </p>
         </div>

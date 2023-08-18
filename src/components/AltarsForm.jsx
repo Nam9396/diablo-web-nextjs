@@ -18,7 +18,7 @@ const SelectMenu = ({ title, array, data, action }) => {
   <Listbox value={data} onChange={action}>
     {({ open }) => (
       <>
-        <Listbox.Label className="block text-sm font-medium leading-6 text-zinc-800 dark:text-zinc-100">{title}</Listbox.Label>
+        <Listbox.Label className="block text-sm font-medium leading-6 text-zinc-100">{title}</Listbox.Label>
           <div className="relative mt-2">
             <Listbox.Button className="relative w-full cursor-default rounded-md bg-zinc-100 py-1.5 pl-3 pr-10 text-left text-zinc-700 font-medium shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 sm:text-sm sm:leading-6">
               <span className="block truncate">{data.name}</span>
@@ -169,7 +169,7 @@ const AltarForm = () => {
   return (
     
     <form onSubmit={onClickHandler} className={clsx(
-      'w-[90%] sm:w-[50%] mx-auto p-4 sm:p-8 bg-neutral-200 dark:bg-zinc-800 rounded-lg'
+      'w-[90%] sm:w-[50%] mx-auto p-4 sm:p-8 bg-zinc-800 rounded-lg'
     )}>
 
       <div>
@@ -183,7 +183,7 @@ const AltarForm = () => {
 
       <button
         type="submit"
-        className="rounded-md mt-[40px] bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+        className="rounded-md mt-[40px] bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-zinc-100 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
       >
         Gửi yêu cầu
       </button>

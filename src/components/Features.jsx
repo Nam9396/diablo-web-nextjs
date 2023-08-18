@@ -24,16 +24,16 @@ const Features = () => {
           <div className="lg:pr-8 md:pl-10 lg:pt-4">
             <div className="lg:max-w-lg">
               <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-100">Đáp ứng ngay nhu cầu.</p>
-              <p className="mt-6 text-lg leading-8 text-zinc-400">
+              <p className="mt-6 text-lg leading-8 text-gray-300">
                 Bạn sẽ không mất thời gian để chọn lựa và cân nhắc, chúng tôi tư vấn ngay khi bạn yêu cầu.
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative">
-                    <dt className="inline font-semibold text-yellow-400">
+                    <dt className="inline font-semibold text-yellow-500">
                       {feature.name}
                     </dt>{' '}
-                    <dd className="inline text-zinc-400">{feature.description}</dd>
+                    <dd className="inline">{feature.description}</dd>
                   </div>
                 ))}
               </dl>

@@ -79,10 +79,10 @@ const LevelUp = () => {
         
         {/* sologan section */}
         <header className="mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white  sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-100  sm:text-5xl">
             Chọn gói dịch vụ <span className='text-yellow-500'>được tinh chỉnh</span> phù hợp với bạn
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <p className="mt-6 text-base text-gray-300">
             Tham khảo các gói sẵn có, gửi yêu cầu và bắt đầu cuộc chiến ngay!
           </p>
         </header>

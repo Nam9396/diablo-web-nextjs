@@ -79,7 +79,7 @@ function MobileNavigation() {
             <MobileNavLink href="/about">About</MobileNavLink>
             {/* <MobileNavLink href="/articles">Items</MobileNavLink> */}
             <MobileNavLink href="/boosting">Boosting</MobileNavLink>
-            <MobileNavLink href="/speaking">Blog</MobileNavLink>
+            <MobileNavLink href="/blog">Blog</MobileNavLink>
             {/* <MobileNavLink href="/order-detail">Contact</MobileNavLink> */}
             <MobileNavLink href="/auth">Sign in</MobileNavLink>
           </Popover.Panel>

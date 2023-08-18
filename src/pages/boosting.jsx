@@ -21,10 +21,11 @@ const Boosting = () =>  {
       </Head>
       <Container className="mt-16 sm:mt-32">
         <header className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-white  sm:text-5xl">
-            Standing on the <span className='text-yellow-500'>shoulders of giants.</span>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-100  sm:text-5xl">
+            Standing on {' '}
+            <span className="relative whitespace-nowrap text-yellow-500"> the shoulders of giants.</span>
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <p className="mt-6 text-base text-gray-300">
             Tận dụng kỹ năng của đội ngũ am hiểu thế giới Diablo. Dịch vụ chúng tôi cung cấp cực kỳ dễ hiểu, nhanh chóng và minh bạch.
           </p>
         </header>
@@ -44,11 +45,11 @@ const Boosting = () =>  {
                     unoptimized
                   />
                 </div>
-                <h2 className="mt-6 text-xl font-semibold text-zinc-800 dark:text-zinc-100">
+                <h2 className="mt-6 text-xl font-semibold text-zinc-100">
                   <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-sm font-medium transition group-hover:text-yellow-500 text-zinc-600 dark:text-zinc-400">
+                <p className="relative z-10 mt-6 flex text-sm font-medium transition group-hover:text-yellow-500 text-zinc-400">
                   {/* <LinkIcon className="h-6 w-6 flex-none" /> */}
                   <GiDiabloSkull className="h-6 w-6 flex-none"/>
                   <span className="ml-2">{project.link.label}</span>

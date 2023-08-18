@@ -51,12 +51,12 @@ const Steps = () => {
                       'h-8 w-8 rounded-full flex items-center justify-center bg-yellow-700'
                     )}
                   >
-                    <event.icon className="h-5 w-5 text-white" aria-hidden="true" />
+                    <event.icon className="h-5 w-5 text-gray-300" aria-hidden="true" />
                   </span>
                 </div>
                 <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
                   <div>
-                    <p className="text-sm text-zinc-100">
+                    <p className="text-sm text-gray-300">
                       {event.content}{' '}
                     </p>
                   </div>

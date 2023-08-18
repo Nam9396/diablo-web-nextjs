@@ -9,7 +9,7 @@ const HomeBlog = () => {
     <div className="bg-zinc-700/[0.15] py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
-          <h2 className="text-3xl font-bold tracking-tight text-yellow-400 sm:text-4xl">Tìm hiểu về thế giới Diablo.</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-yellow-500 sm:text-4xl">Tìm hiểu về thế giới Diablo.</h2>
 
           <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
             {articleMetaArray.map((post, index) => (
@@ -25,7 +25,7 @@ const HomeBlog = () => {
               </div>
               <div>
                 <div className="group relative max-w-xl">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-yellow-500">
+                  <h3 className="mt-3 text-lg font-semibold leading-6 text-zinc-100 group-hover:text-yellow-500">
                     <Link href={`/articles/post/${post.slug}`}><span className="absolute inset-0" />{post.title}</Link>
                   </h3>
                   <p className="mt-5 text-sm leading-6 text-zinc-400">{post.description}</p>
@@ -33,10 +33,10 @@ const HomeBlog = () => {
                 <div className="mt-6 flex border-t border-gray-900/5 pt-6">
                   <div className="relative flex items-center gap-x-4">
                     <div className="text-sm leading-6">
-                      <p className="font-semibold text-white">
+                      <p className="font-semibold text-zinc-100">
                         <span className="absolute inset-0" />Nguyen Duy Anh Khoa
                       </p>
-                      <p className="text-white">Co-Founder / Admin</p>
+                      <p className="text-zinc-100">Co-Founder / Admin</p>
                     </div>
                   </div>
                 </div>

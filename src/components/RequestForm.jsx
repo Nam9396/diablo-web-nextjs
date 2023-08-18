@@ -209,7 +209,7 @@ const RequestForm = () => {
   };
 
   return (
-    <form onSubmit={onClickHandler} className={clsx('w-[90%] sm:w-[50%] mx-auto p-4 sm:p-8 bg-neutral-200 dark:bg-zinc-800 rounded-lg')}>
+    <form onSubmit={onClickHandler} className={clsx('w-[90%] sm:w-[50%] mx-auto p-4 sm:p-8 bg-zinc-800 rounded-lg')}>
       <div>
         <div className='mb-[20px]'><SelectMenu title={'Chọn chế độ game'} data={gameMode} action={setGameMode} array={gameModeData} /></div>
         <div className='mb-[20px]'><SelectMenu title={'Chọn nền tảng'} data={gamePlatform} action={setGamePlatform} array={gamePlatformData} /></div>
@@ -221,7 +221,7 @@ const RequestForm = () => {
 
       <button
         type="submit"
-        className="rounded-md mt-[40px] bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+        className="rounded-md mt-[40px] bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-zinc-100 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
       >
         Gửi yêu cầu
       </button>
