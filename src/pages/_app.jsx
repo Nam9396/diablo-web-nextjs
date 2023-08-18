@@ -35,9 +35,9 @@ export default function App({
       <Provider store={store}>
           <div className="fixed inset-0 flex justify-center bg-zinc-900"></div>
           <div className="relative flex w-full flex-col">
-            <Head>
+            {/* <Head>
               <link rel="icon" href="/icon-1.ico" sizes="any" />
-            </Head>
+            </Head> */}
             <Header />
             <main className="flex-auto">
               <Component previousPathname={previousPathname} {...pageProps} />
