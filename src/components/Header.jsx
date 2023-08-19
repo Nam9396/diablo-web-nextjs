@@ -19,7 +19,7 @@ function MobileNavIcon({ open }) {
   return (
     <svg
       aria-hidden="true"
-      className="h-3.5 w-3.5 overflow-visible stroke-slate-700"
+      className="h-3.5 w-3.5 overflow-visible stroke-zinc-200"
       fill="none"
       strokeWidth={2}
       strokeLinecap="round"
@@ -245,7 +245,7 @@ export default function Header () {
                 </div>
               </div>
 
-              <span className="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true" />
+              <span className="mx-4 h-6 w-px bg-zinc-200 lg:mx-6" aria-hidden="true" />
 
             </div>
             <div className="-mr-1 md:hidden">
