@@ -55,7 +55,7 @@ export function ArticleLayout({
                   {meta.title}
                 </h1>
               </header>
-              <Prose className="mt-8 text-zinc-400">{children}</Prose>
+              <Prose className="mt-8">{children}</Prose>
             </article>
           </div>
         </div>

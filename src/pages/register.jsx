@@ -9,7 +9,8 @@ import { registerUser, oauthUser } from '../../swr/userSWRFn.js'
 import { useRouter } from 'next/router.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { setExecuteStatus } from 'redux/authSlice.js'
-import Spinner from '@/components/Spinner.jsx'
+import Spinner, { SpinnerBottom } from '../components/Spinner.jsx'
+import Modal from '@/components/Modal.jsx'
 
 const Register = () => {
   const [ email, setEmail ] = useState('');
@@ -20,7 +21,7 @@ const Register = () => {
   const dispatch = useDispatch();
 
   // traditional register functions
-  const { trigger, isMutating } = registerUser();
+  const { trigger, isMutating: mutateAuth, error: errorAuth } = registerUser();
   const traditionalRegisterHandler = async (e) => { 
     e.preventDefault();
     try { 
@@ -37,9 +38,7 @@ const Register = () => {
   }; 
   
   // oauth register functions
-  const { trigger: oauthUserTrigger} = oauthUser();
-  
-
+  const { trigger: oauthUserTrigger, isMutating: mutateOauth, error: errorOauth } = oauthUser();
   useEffect(() => {
     const oauthUserHanlder = async() => { 
       try { 
@@ -61,6 +60,7 @@ const Register = () => {
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        {/* header section */}
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <GiDiabloSkull className='text-yellow-500 mx-auto h-20 w-20' />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-zinc-100">
@@ -70,6 +70,7 @@ const Register = () => {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={traditionalRegisterHandler}>
+            {/* email section */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-zinc-100">
                 Email
@@ -87,7 +88,7 @@ const Register = () => {
               />
               </div>
             </div>
-
+            {/* password section */}
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-zinc-100">
@@ -112,7 +113,7 @@ const Register = () => {
                 />
               </div>
             </div>
-
+            {/* btn section */}
             <div>
               <button
               type="submit"
@@ -156,18 +157,19 @@ const Register = () => {
             </div>
           </div>
 
-
           <p className="mt-10 text-center text-sm text-gray-400">
             Đã có tài khoản?{' '}
-          <Link href="/auth" className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">
-            Đăng nhập 
-          </Link>
+            <Link href="/auth" className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">
+              Đăng nhập 
+            </Link>
           </p>
         </div>
-      </div>
+        
+        {(mutateAuth || mutateOauth) && <SpinnerBottom />}
 
-      {isMutating && <Spinner />}
-      
+        {(errorAuth || errorOauth) && <Modal variant={'error'} />}
+
+      </div>
     </>
   )
 }

@@ -5,7 +5,8 @@ import Image from 'next/image.js'
 import { toast } from 'react-toastify'
 import Modal from './Modal.jsx'
 import { useRouter } from 'next/router.js'
-import Spinner from './Spinner.jsx'
+import { SpinnerButton, SpinnerPage } from './Spinner.jsx'
+
 
 
 function classNames(...classes) {
@@ -16,7 +17,7 @@ const OrderDetail = () => {
   const router = useRouter()
   const { data: customerOrder, isLoading, error, mutate: refetchOrder } = getUserOrder();
 
-  const { trigger } = userDeleteOrder();
+  const { trigger, isMutating, error: errorDeleteOrder } = userDeleteOrder();
 
   const deleteHandler = async(orderId) => { 
     try { 
@@ -30,8 +31,9 @@ const OrderDetail = () => {
 
   return (
     <div className="mx-auto max-w-2xl pb-24 pt-8 sm:px-6 sm:pt-16 lg:max-w-7xl lg:px-8">
+
     {isLoading ? (
-      <Spinner /> 
+      <SpinnerPage />
     ) : error ? (
       <Modal  
         header={'Bạn chưa gửi yêu cầu nào'}
@@ -99,13 +101,16 @@ const OrderDetail = () => {
               Tiến trình giải quyết yêu cầu
             </p>
             {order.canDeleted &&
-            <button 
-              type="button" 
-              className='text-yellow-500 font-medium hover:text-yellow-300 m-3'
-              onClick={() => deleteHandler(order._id)}
-            >
-              Hủy
-            </button>}
+            <div className='flex flex-row justify-center items-center'>
+              {isMutating && <SpinnerButton />}
+              <button 
+                type="button" 
+                className='text-yellow-500 font-medium hover:text-yellow-300 m-3'
+                onClick={() => deleteHandler(order._id)}
+              >
+                Hủy
+              </button>
+            </div>}
           </div>
 
           <div className="mt-6" aria-hidden="true">
@@ -139,6 +144,9 @@ const OrderDetail = () => {
         variant={'success'}
       />
     )}
+
+    {errorDeleteOrder && <Modal variant={'error'}/>}
+
     </div>
   )
 }

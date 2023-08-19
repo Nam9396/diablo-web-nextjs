@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import Modal from './Modal.jsx'
 import { sendMessage } from '../../swr/discordSWRFn.js'
 import { createOrder } from '../../swr/orderSWRFn.js'
-import Spinner from './Spinner.jsx'
+import { SpinnerBottom } from './Spinner.jsx'
 import { useSelector } from 'react-redux'
 
 
@@ -176,8 +176,8 @@ const RequestForm = () => {
   const [ nameService, setNameService ] = useState('Cá nhân hóa yêu cầu');
   const [ modalDisplay, setModalDisplay ] = useState(false);
 
-  const { trigger: sendMessageTrigger } = sendMessage();
-  const { trigger: createOrderTrigger, isMutating, error } = createOrder();
+  const { trigger: sendMessageTrigger, isMutating: mutateSendMess, error: errorSendMess } = sendMessage();
+  const { trigger: createOrderTrigger, isMutating: mutateCreateOrder , error: errorCreateOrder } = createOrder();
   
   // {gameMode, gamePlatform, playMode, currentLevel, desiredLevel, message}
   const submitHandler = async () => { 
@@ -237,9 +237,9 @@ const RequestForm = () => {
         variant={'success'}
       />}
 
-      {isMutating && <Spinner />}
+      {(mutateSendMess || mutateCreateOrder) && <SpinnerBottom />}
 
-      {error && <Modal variant={'error'}/>}
+      {(errorSendMess || errorCreateOrder) && <Modal variant={'error'}/>}
      
     </form>
 

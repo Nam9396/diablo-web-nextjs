@@ -9,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { authUser, oauthUser } from '../../swr/userSWRFn.js'
 import { toast } from 'react-toastify'
 import { setExecuteStatus } from 'redux/authSlice'
+import { SpinnerBottom } from '@/components/Spinner.jsx'
+import Modal from '@/components/Modal.jsx'
 
 const Auth = () =>  {
   const router = useRouter();
@@ -20,7 +22,7 @@ const Auth = () =>  {
   const [ password, setPassword ] = useState('');
 
   // traditional auth section
-  const { trigger } = authUser();
+  const { trigger, isMutating: mutateAuth, error: errorAuth } = authUser();
   const submitHandler = async(e) => {
     try { 
       e.preventDefault(); 
@@ -36,8 +38,7 @@ const Auth = () =>  {
   }
 
   // oauth section
-  const { trigger: oauthUserTrigger } = oauthUser();
-
+  const { trigger: oauthUserTrigger, isMutating: mutateOauth, error: errorOauth } = oauthUser();
   useEffect(() => {
     const oauthUserHanlder = async() => { 
       try { 
@@ -59,6 +60,8 @@ const Auth = () =>  {
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+
+        {/* header section */}
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <GiDiabloSkull className='text-yellow-500 mx-auto h-20 w-20' />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-zinc-100">
@@ -68,6 +71,7 @@ const Auth = () =>  {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={submitHandler}>
+            {/* email section */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-zinc-100">
                 Email
@@ -85,7 +89,7 @@ const Auth = () =>  {
               />
               </div>
             </div>
-
+            {/* password section */}
             <div>
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block text-sm font-medium leading-6 text-zinc-100">
@@ -110,7 +114,7 @@ const Auth = () =>  {
                 />
               </div>
             </div>
-
+            {/* btn section */}
             <div>
               <button
                 type="submit"
@@ -155,12 +159,16 @@ const Auth = () =>  {
 
           <p className="mt-10 text-center text-sm text-gray-400">
             Chưa có tài khoản?{' '}
-          <Link href="/register" className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">
-            Đăng ký cực đơn giản
-          </Link>
+            <Link href="/register" className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">
+              Đăng ký cực đơn giản
+            </Link>
           </p>
-          
         </div>
+
+        {(mutateAuth || mutateOauth) && <SpinnerBottom />}
+
+        {(errorAuth || errorOauth) && <Modal variant={'error'} />}
+
       </div>
     </>
   )

@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import { RadioGroup } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/20/solid'
 import Steps from '@/components/Steps'
 import image3 from '../../public/images/photos/diablo-3.jpg'
@@ -11,7 +10,7 @@ import { toast } from 'react-toastify'
 import { sendMessage } from '../../swr/discordSWRFn.js'
 import { createOrder } from '../../swr/orderSWRFn.js'
 import InputModal from '@/components/InputModal'
-import Spinner from '@/components/Spinner'
+import { SpinnerBottom } from '@/components/Spinner'
 import Modal from '@/components/Modal'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
@@ -28,8 +27,8 @@ const LevelUp = () => {
   const [ modalDisplay, setModalDisplay ] = useState(false);
   const [ inputModalDisplay, setInputModalDisplay ] = useState(false);
 
-  const { trigger: sendMessageTrigger, error: senMessageError } = sendMessage();
-  const { trigger: createOrderTrigger, isMutating, error: createOrderError  } = createOrder();
+  const { trigger: sendMessageTrigger, isMutating: mutateSendMess, error: senMessageError } = sendMessage();
+  const { trigger: createOrderTrigger, isMutating: mutateCreateOrder, error: createOrderError  } = createOrder();
 
   const setupRequest = (tier) => {
     const combinedString = tier.features.map(str => '\n' + str).join('');
@@ -176,9 +175,9 @@ const LevelUp = () => {
         setInputModalDisplay={setInputModalDisplay}
       />}
 
-      {isMutating && <Spinner />}
-
       {(senMessageError || createOrderError) && <Modal variant={'error'}/>}
+
+      {(mutateSendMess || mutateCreateOrder) && <SpinnerBottom />}
 
     </div>
 

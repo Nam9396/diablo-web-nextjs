@@ -5,6 +5,8 @@ import { UserIcon } from '@heroicons/react/20/solid'
 import { signOut } from 'next-auth/react'
 import { toast } from 'react-toastify'
 import { logOutUser } from '../../swr/userSWRFn.js'
+import Modal from './Modal.jsx'
+import { SpinnerButton } from './Spinner.jsx'
 
 
 function classNames(...classes) {
@@ -14,7 +16,7 @@ function classNames(...classes) {
 const UserTaskbar = () => {
   const [ userName, setUserName ] = useState('');
   
-  const { trigger, isMutating } = logOutUser();
+  const { trigger, isMutating, error } = logOutUser();
 
   const logoutHandler = async() => {
     try { 
@@ -32,7 +34,8 @@ const UserTaskbar = () => {
   }, [])
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <div className='flex flex-row justify-center items-center'>
+    <Menu as="div" className="relative ml-4 inline-block text-left">
       <Menu.Button>
         <UserIcon className="h-6 w-6 text-zinc-100 hover:text-yellow-700" aria-hidden="true" />
       </Menu.Button>
@@ -103,6 +106,10 @@ const UserTaskbar = () => {
         </Menu.Items>
       </Transition>
     </Menu>
+
+    {error && <Modal variant={'error'}/>}
+    {isMutating && <SpinnerButton />}
+    </div>
   )
 }
 

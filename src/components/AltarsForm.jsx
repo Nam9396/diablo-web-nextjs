@@ -8,8 +8,8 @@ import { useRouter } from 'next/router'
 import Modal from './Modal.jsx'
 import { sendMessage } from '../../swr/discordSWRFn.js'
 import { createOrder } from '../../swr/orderSWRFn.js'
-import Spinner from './Spinner.jsx'
 import { useSelector } from 'react-redux'
+import { SpinnerBottom } from './Spinner.jsx'
 
 
 const SelectMenu = ({ title, array, data, action }) => { 
@@ -135,8 +135,8 @@ const AltarForm = () => {
   const [ nameService, setNameService ] = useState('Altars of Lilith');
   const [ modalDisplay, setModalDisplay ] = useState(false);
 
-  const { trigger: sendMessageTrigger } = sendMessage();
-  const { trigger: createOrderTrigger, isMutating, error } = createOrder();
+  const { trigger: sendMessageTrigger, isMutating: mutateSendMess, error: errorSendMess } = sendMessage();
+  const { trigger: createOrderTrigger, isMutating: mutateCreateOrder , error: errorCreateOrder } = createOrder();
   
   const submitHandler = async () => { 
     const message = `Client: ${address} \n${gameMode.name} - ${gamePlatform.name} - ${playMode.name} \nVùng đất: ${area.name} \nYêu cầu khác: ${extraRequest}`;
@@ -160,6 +160,7 @@ const AltarForm = () => {
     e.preventDefault();
     if (localStorageValue()) { 
       submitHandler();
+      setAddress(''); setExtraRequest('');
     } else { 
       toast.error('Bạn cần đăng ký/đăng nhập trước khi đặt đơn');
       setAddress(''); setExtraRequest('');
@@ -199,10 +200,9 @@ const AltarForm = () => {
         variant={'success'}
       />}
 
-      {/* {isMutating && <Spinner />} */}
-      <Spinner />
+      {(mutateSendMess || mutateCreateOrder) && <SpinnerBottom />}
 
-      {error && <Modal variant={'error'}/>}
+      {(errorSendMess || errorCreateOrder) && <Modal variant={'error'}/>}
      
     </form>
     
