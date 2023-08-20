@@ -43,7 +43,7 @@ const Auth = () =>  {
     const oauthUserHanlder = async() => { 
       try { 
         const user = await oauthUserTrigger({ email: session.user.email, oauthProvider: session.provider, accessToken: session.accessToken });
-        toast.success('User login!');
+        // toast.success('User login!');
         localStorage.setItem('diabloUser', JSON.stringify(user.email));
         router.push('/boosting');
       } catch(err) { 
