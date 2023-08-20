@@ -59,7 +59,7 @@ const Modal = ({ header, detail, name1, name2, fn1, fn2, variant }) => {
                   </div>
                 </div>
 
-                {variant === 'success' ? (
+                {variant === 'success' && 
                 <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
                   <button
                     type="button"
@@ -75,14 +75,13 @@ const Modal = ({ header, detail, name1, name2, fn1, fn2, variant }) => {
                   >
                     {name2}
                   </button>
-                </div>
-                ) : (
+                </div>}
+                {variant === 'error' &&
                   <button 
                     onClick={() => router.push('/')} 
                     className='flex mt-5 sm:mt-6 mx-auto rounded-md bg-indigo-600 px-8 py-2 text-sm text-center font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                  >Home</button>
-                )}
-              
+                  >Home</button>}
+        
               </Dialog.Panel>
             </Transition.Child>
           </div>
