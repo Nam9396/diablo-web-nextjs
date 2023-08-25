@@ -14,6 +14,7 @@ import { SpinnerBottom } from '@/components/Spinner'
 import Modal from '@/components/Modal'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
+import BackgroundImage from '@/components/BackgroundImage'
 
 
 
@@ -72,6 +73,8 @@ const LevelUp = () => {
         content="Chọn gói dịch vụ boosting được thiết kế sẵn."
       />
     </Head>
+
+    <BackgroundImage />
       
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -81,7 +84,7 @@ const LevelUp = () => {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-100  sm:text-5xl">
             Chọn gói dịch vụ <span className='text-yellow-500'>được tinh chỉnh</span> phù hợp với bạn
           </h1>
-          <p className="mt-6 text-base text-gray-300">
+          <p className="mt-6 text-base font-semibold text-gray-300">
             Tham khảo các gói sẵn có, gửi yêu cầu và bắt đầu cuộc chiến ngay!
           </p>
         </header>

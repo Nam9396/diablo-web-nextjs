@@ -7,6 +7,7 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import FAQ from '@/components/FAQ'
 import { projects } from '../data/frontend_data'
+import BackgroundImage from '@/components/BackgroundImage'
 
 
 const Boosting = () =>  {
@@ -19,13 +20,14 @@ const Boosting = () =>  {
           content="Các dịch vụ boosting."
         />
       </Head>
+      <BackgroundImage />
       <Container className="mt-16 sm:mt-32">
         <header className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-100  sm:text-5xl">
             Standing on {' '}
             <span className="relative whitespace-nowrap text-yellow-500"> the shoulders of giants.</span>
           </h1>
-          <p className="mt-6 text-base text-gray-300">
+          <p className="mt-6 text-base font-semibold text-gray-300">
             Tận dụng kỹ năng của đội ngũ am hiểu thế giới Diablo. Dịch vụ chúng tôi cung cấp cực kỳ dễ hiểu, nhanh chóng và minh bạch.
           </p>
         </header>
@@ -37,7 +39,7 @@ const Boosting = () =>  {
           >
             {projects.map((project) => (
               <Card as="li" key={project.name}>
-                <div className="relative z-10 flex items-center justify-center shadow-md shadow-zinc-800/5">
+                <div className="relative z-10 flex items-center justify-center shadow-md">
                   <Image
                     src={project.logo}
                     alt=""
@@ -49,7 +51,7 @@ const Boosting = () =>  {
                   <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-sm font-medium transition group-hover:text-yellow-500 text-zinc-400">
+                <p className="relative z-10 mt-6 flex text-sm font-semibold transition group-hover:text-yellow-500 text-zinc-200">
                   {/* <LinkIcon className="h-6 w-6 flex-none" /> */}
                   <GiDiabloSkull className="h-6 w-6 flex-none"/>
                   <span className="ml-2">{project.link.label}</span>

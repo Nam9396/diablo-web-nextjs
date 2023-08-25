@@ -10,6 +10,7 @@ import { SessionProvider } from 'next-auth/react'
 import { wrapper } from '../../redux/store.js'
 import { Provider } from 'react-redux'
 import dynamic from 'next/dynamic'
+import BackgroundImage from '@/components/BackgroundImage.jsx'
 
 const Header = dynamic(() => import('../components/Header'), { ssr: false })
 
@@ -33,7 +34,8 @@ export default function App({
     <>
       <SessionProvider session={session}>
       <Provider store={store}>
-          <div className="fixed inset-0 flex justify-center bg-zinc-900"></div>
+          {/* <div className="fixed inset-0 flex justify-center bg-zinc-900"></div> */}
+          {/* <BackgroundImage /> */}
           <div className="relative flex w-full flex-col">
             <Head>
               <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

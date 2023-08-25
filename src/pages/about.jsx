@@ -48,6 +48,7 @@ export default function About() {
           content="Chào mừng bạn đến với shadowgg.com! Chúng tôi chuyên cung cấp các dịch vụ về game, đáng tin cậy, nhanh chóng và hiệu quả."
         />
       </Head>
+      <div className="fixed inset-0 -z-10 flex justify-center bg-zinc-900"></div>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">

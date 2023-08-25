@@ -11,6 +11,7 @@ import { toast } from 'react-toastify'
 import { setExecuteStatus } from 'redux/authSlice'
 import { SpinnerBottom } from '@/components/Spinner.jsx'
 import Modal from '@/components/Modal.jsx'
+import BackgroundImage from '@/components/BackgroundImage.jsx'
 
 const Auth = () =>  {
   const router = useRouter();
@@ -59,6 +60,8 @@ const Auth = () =>  {
  
   return (
     <>
+      <div className="fixed inset-0 -z-10 flex justify-center bg-zinc-900"></div>
+
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 
         {/* header section */}

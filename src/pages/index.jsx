@@ -8,6 +8,7 @@ import { sendMessage } from '../../swr/discordSWRFn.js'
 import { toast } from 'react-toastify'
 import { useState } from 'react'
 import HomeBlog from '@/components/HomeBlog.jsx'
+import BackgroundImage from '@/components/BackgroundImage.jsx'
 
 function MailIcon(props) {
   return (
@@ -52,7 +53,7 @@ function Newsletter() {
   return (
     <form
       onSubmit={submitHandler}
-      className="md:w-[70%] mx-auto my-20 rounded-2xl border p-6 border-zinc-700/40"
+      className="w-[90%] md:w-[70%] mx-auto my-20 rounded-2xl border p-6 border-zinc-700/40"
     >
       <p className="mt-2 text-3xl font-bold tracking-tight text-yellow-500">Để lại thông tin và chúng tôi sẽ liên hệ bạn.</p>
       <p className="mt-2 text-sm text-zinc-100">
@@ -89,6 +90,8 @@ export default function Home() {
           content="Khoa gaming cung cấp dịch vụ game boosting và nhiều hỗ trợ khác. Dịch vụ của chúng tôi đáng tin cậy, dễ sử dụng và đáp ứng nhu cầu khách hàng nhanh chóng."
         />
       </Head>
+
+      <BackgroundImage />
       
       <Hero />
 
@@ -96,9 +99,9 @@ export default function Home() {
 
       <FeatureSteps />
     
-      <Container>
+      <div className='bg-zinc-900 py-8 px-4 flex flex-row justify-center'>
         <Newsletter />
-      </Container>
+      </div>
 
       <HomeBlog />
     </>

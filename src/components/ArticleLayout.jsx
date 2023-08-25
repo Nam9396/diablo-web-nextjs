@@ -36,6 +36,9 @@ export function ArticleLayout({
         <title>{`${meta.title} - Spencer Sharp`}</title>
         <meta name="description" content={meta.description} />
       </Head>
+
+      <div className="fixed inset-0 -z-10 flex justify-center bg-zinc-900"></div>
+      
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">

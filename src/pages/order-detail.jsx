@@ -11,6 +11,8 @@ export default function Order() {
           content="Toàn bộ thông tin về yêu cầu của khách hàng được cập nhật ở đây."
         />
       </Head>
+
+      <div className="fixed inset-0 -z-10 flex justify-center bg-zinc-900"></div>
       
       <OrderDetail />
     </>

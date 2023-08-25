@@ -6,7 +6,7 @@ import Image from "next/image";
 const HomeBlog = () => {
   
   return (
-    <div className="bg-zinc-700/[0.15] py-24 sm:py-32">
+    <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <h2 className="text-3xl font-bold tracking-tight text-yellow-500 sm:text-4xl">Tìm hiểu về thế giới Diablo.</h2>
