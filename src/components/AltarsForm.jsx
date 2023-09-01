@@ -151,7 +151,7 @@ const AltarForm = () => {
       toast.success('Đã gửi tin nhắn đến Admin');
       setAddress(''); setExtraRequest('');
     } catch (err) { 
-      toast.error(err?.data || err.error)
+      toast.error(err?.info || err.error)
       console.log(err)
     }
   }
