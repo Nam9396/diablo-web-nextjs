@@ -8,6 +8,14 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://testbackend1.de.r.appspot.com/api/:path*'
+      },
+    ]
+  },
 }
 
 const withMDX = nextMDX({
