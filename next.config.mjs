@@ -11,9 +11,13 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/:path*',
-        destination: 'https://testbackend1.de.r.appspot.com/api/:path*'
+        source: '/api/auth/:path*',
+        destination: '/api/auth/:path*',
       },
+      {
+        source: '/api/:path*',
+        destination: 'https://testbackend1.de.r.appspot.com/api/:path*',
+      }
     ]
   },
 }

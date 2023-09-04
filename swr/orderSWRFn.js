@@ -5,16 +5,19 @@ import { mutationDeleteFetcher, mutationPostFetcher, queryFetcher } from './fetc
 
 const createOrder = () => { 
   const { trigger, isMutating, error } = useSWRMutation('/api/order', mutationPostFetcher);
+  // const { trigger, isMutating, error } = useSWRMutation(`${BASE_URL}/${ORDER_URL}`, mutationPostFetcher);
   return { trigger, isMutating, error };
 };
 
 const getUserOrder = () => { 
   const { data, isLoading, error, mutate } = useSWR('/api/order/mine', queryFetcher);
+  // const { data, isLoading, error, mutate } = useSWR(`${BASE_URL}/${ORDER_URL}/mine`, queryFetcher);
   return { data, isLoading, error, mutate };
 }
 
 const userDeleteOrder = (id) => { 
   const { trigger, isMutating, error } = useSWRMutation('/api/order', mutationDeleteFetcher);
+  // const { trigger, isMutating, error } = useSWRMutation(`${BASE_URL}/${ORDER_URL}`, mutationDeleteFetcher);
   return { trigger, isMutating, error };
 };
 
