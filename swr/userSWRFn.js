@@ -1,5 +1,5 @@
 import useSWRMutation from 'swr/mutation'
-import { BASE_URL, USERS_URL } from 'constant';
+// import { BASE_URL, USERS_URL } from 'constant';
 import { mutationPostFetcher } from './fetchFrame';
 
 const oauthUser = () => { 
@@ -13,7 +13,7 @@ const oauthUser = () => {
 };
 
 const registerUser = () => { 
-  const { trigger, isMutating, error } = useSWRMutation('api/user/register', mutationPostFetcher);
+  const { trigger, isMutating, error } = useSWRMutation('/api/user/register', mutationPostFetcher);
   // const { trigger, isMutating, error } = useSWRMutation(`${BASE_URL}/${USERS_URL}/register`, mutationPostFetcher);
   return {
     trigger, 

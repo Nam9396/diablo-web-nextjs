@@ -1,6 +1,6 @@
 import useSWRMutation from 'swr/mutation'
 import useSWR from 'swr'
-import { BASE_URL, ORDER_URL } from 'constant';
+// import { BASE_URL, ORDER_URL } from 'constant';
 import { mutationDeleteFetcher, mutationPostFetcher, queryFetcher } from './fetchFrame';
 
 const createOrder = () => { 
